@@ -10,13 +10,13 @@
 - Existing website: NONE
 - Core repo: https://github.com/kannaryukkei/ai-design-exploration-synthesis
 - Core baseline (G0 Lead-resolved): `344620b6c8778c5256e4c2fc3d9f83342a239c17`, branch `main`, resolved 2026-11-22 UTC. Canonical paths: `core/ADES_GUIDE.md`, `core/ADES_PROJECT_BRIEF.md`, `core/ADES_CLIENT_INTAKE.md`, `products/business/PRODUCT_PROFILE.md`. All fetched at exact SHA; no tag confirmed.
-- Website baseline at G0: repository empty, default branch `main`; no prior source/routes/assets/tests. Lead initialized `ADES_PROJECT_BRIEF.md`; initial commit `020fff67dc5c45def775cfa16df34daac3ee765c`; current commit before this correction `516ddb642c66d5f070e3451e5f700132c7fd45f4`. The latter was independently inspected and found to contain literal placeholder `<BRIEF_CONTENT>`; correction is being made now.
+- Website baseline at G0: repository empty, default branch `main`; no prior source/routes/assets/tests. Lead initialized `ADES_PROJECT_BRIEF.md`; initial commit `020fff67dc5c45def775cfa16df34daac3ee765c`; current commit before this correction `516ddb642c66d5f070e3451e5f700132c7fd45f4`. That placeholder was corrected in commit `259b8493c59a94e1c9615f4192c5e472e1d6b723`; the active Brief content was re-fetched and independently checked.
 - Business mode: `studio_development`; ADES mode: `single_agent_end_to_end`
-- Operator-selected Lead: GPT GO (operator-provided label; exact provider/model/version NOT_EXPOSED by runtime)
+- Operator-selected Lead label: GPT GO (operator-provided). Actual model exposed in this session: GPT-6; provider: OpenAI; version: GPT-6. These are separate identity fields; GPT GO is not silently reinterpreted as a model name.
 - Execution Agent: SAME AS LEAD. Governance Lead: SAME AS LEAD. Evaluators/Synthesizer: NONE. Design-author roster: NONE.
 - Role overlap: one AI identity performs Lead, author, execution and governance; self-assessment is non-independent; no jury/panel.
-- Environment: ChatGPT conversation with GitHub connector. Repository read/write access verified. No separate coding agent or handoff. No browser automation/Playwright/Chromium tool exposed in available tool inventory. Image generation tool is available in ChatGPT UI but no image tool is exposed via the GitHub/functions harness; availability for the Lead's later north-star step is NOT_VERIFIED until invoked.
-- Current branch: `main`. Current stage: G0 correction + G1 discovery. Overall: IN_PROGRESS.
+- Environment: ChatGPT conversation with GitHub connector. Repository read/write access verified. No separate coding agent or handoff. No browser automation/Playwright/Chromium tool exposed in available tool inventory. Image generation tool is available in this conversation via the dedicated image-generation capability; it has not yet been invoked. No external image-generation provider/model is exposed.
+- Current branch: `main`; latest verified commit at this update: `259b8493c59a94e1c9615f4192c5e472e1d6b723`. Current stage: G1 discovery. Overall: IN_PROGRESS.
 - Release/deployment: NOT_AUTHORIZED. No spend, external contact, DNS, hosting or public release authorized.
 - Last verified state: 2026-11-23. Next: complete discovery, freeze research pack, present exact PRD in conversation, obtain explicit version-bound approval before R1.
 
@@ -47,7 +47,7 @@
 ## 4. Gate status
 | Gate | Status | Evidence / blocker |
 |---|---|---|
-| G0 | IN_PROGRESS | Core revision and repository access verified; website repo empty at baseline; Brief placeholder defect discovered and correction underway; browser and local runtime capability not verified. |
+| G0 | PASS | Exact Core SHA and canonical files verified; both repository identities verified; website repo empty at baseline; GitHub read/write path exercised; active Brief placeholder corrected and re-fetched; no external handoff required in single-agent mode. Browser automation and local runtime remain unexposed but are optional capabilities, not G0 blockers. |
 | G1 | IN_PROGRESS | Fictional intake reviewed; local/industry benchmark research underway; PRD not yet presented or approved. |
 | G2 | NOT_STARTED | Requires R1/R2/R3 and explicit operator direction approval. |
 | G3 | NOT_STARTED | No build. |
