@@ -1,8 +1,8 @@
 :root{
   color-scheme:light;
   --ink:#1d3028;--forest:#253d32;--forest-2:#344f40;--paper:#f4f0e6;--paper-2:#ebe6d9;
-  --white:#fbfaf5;--clay:#a94f2f;--clay-soft:#c87956;--sage:#aeb9a5;--line:#d6d0c2;
-  --muted:#657168;--serif:Georgia,"Times New Roman",serif;--sans:Arial,Helvetica,sans-serif;
+  --white:#fbfaf5;--clay:#9b462c;--clay-soft:#c87956;--sage:#aeb9a5;--line:#d6d0c2;
+  --muted:#536057;--serif:Georgia,"Times New Roman",serif;--sans:Arial,Helvetica,sans-serif;
   --mono:ui-monospace,SFMono-Regular,Consolas,monospace;--wrap:1320px;--ease:cubic-bezier(.2,.7,.2,1)
 }
 *{box-sizing:border-box}
