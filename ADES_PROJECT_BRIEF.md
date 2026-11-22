@@ -10,8 +10,8 @@
 - Business mode: `studio_development`. ADES mode: `single_agent_end_to_end`.
 - Operator-selected Lead label: GPT GO (verbatim operator label). Actual runtime identity: GPT-6, provider OpenAI, version GPT-6. These are separate identity layers.
 - Execution Agent: SAME AS LEAD. Governance Lead: SAME AS LEAD. Evaluators/Synthesizer: NONE. Design-author roster: NONE. One identity owns Lead, R1/R2 author, execution and governance; R3 is explicitly non-independent self-assessment, not a jury.
-- Harness: ChatGPT conversation + GitHub connector. GitHub read/write verified on Core and website repository. No separate coding agent or external handoff. Image-generation capability is available in this conversation; exact provider/model/version is not exposed. No browser automation/Playwright/Chromium tool is exposed in the available tool inventory. Local container runtime is available; Node v22.16.0 verified. Browser-rendered QA remains NOT_VERIFIED until an actual browser path is available.
-- Current website branch/head before this Brief update: `main` / `1fa6c5b21250b0c961ccf1d00419927ad7e1169c`. This update supersedes that head; record returned commit and verify after write.
+- Harness: ChatGPT conversation + GitHub connector. GitHub read/write verified on Core and website repository. No separate coding agent or external handoff. Image-generation capability is available in this conversation; exact provider/model/version is not exposed. Local container runtime and Node v22.16.0 are available; Chromium 144.0.7559.96 and Python Playwright are installed. Actual navigation to both localhost and file URLs was blocked by Chromium with `ERR_BLOCKED_BY_ADMINISTRATOR`; browser-rendered QA remains NOT_VERIFIED.
+- Active production branch: `ades/r4-production`; pre-Brief-update HEAD: `7cb35ce04dee9667228f27b7631f826365c697e5`. Branch was created from the isolated R1/R2 exploration branch; `main` remains unchanged. Record and verify the new Brief commit after this update.
 - Release: NOT_AUTHORIZED. No spending, third-party contact, DNS, hosting, deployment or public release authorized.
 - Last verified state: 2026-11-23 Asia/Jakarta.
 
@@ -47,23 +47,23 @@
 - Two synthetic demonstration projects only: Rumah Teduh (residential) and Kedai Sela (small commercial). Every project preview/detail must prominently disclose that it is a fictional concept, not client work, not a completed/built result and not evidence of delivery.
 - Primary CTA wording: “Konsultasikan Proyek Anda”. No live WhatsApp/contact destination exists. The interaction is a local-only inquiry-preparation/message-preview tool; no submission, storage, transmission or promise of reply. Fields may include project type, location, approximate room/space size, needs and optional budget range. Avoid collecting personal/sensitive data.
 - No official prices, timelines, response promises, team credentials, real client claims, reviews, certifications, guarantees or operational policies.
-- No logo/brand system supplied; R1 must explore distinct visual directions rather than assume identity. Desired experience attributes only: distinctive, credible, calm/warm/professional/orderly, responsive, accessible and conversion-oriented; avoid clutter, generic stock presented as proof, heavy motion, autoplay, forced popups and intrusive floating overlays.
+- No client-supplied logo/brand system exists. R1 explored three distinct directions; NUSA-FORMA-R2-01 was approved as the production direction on 2026-11-23. The approved system is warm editorial, forest/cream/terracotta/sage, spatially annotated concept visuals, clear service boundaries and local-only inquiry preparation. This is a design direction, not a real-world trademark or identity claim.
 - Media: use original/generated or rights-clear assets with explicit provenance and demo labels; reference websites are not asset or code reuse permission.
 - Accessibility target: WCAG 2.2 AA as a project target, not a conformance claim; semantic structure, keyboard operation, visible focus, accessible labels/names, sufficient contrast, reduced-motion support and responsive text/layout.
 - Acceptance AC01–AC14: all nine direct routes; coherent shared navigation and cross-page journeys; distinct page purpose/content; honest service boundaries; conspicuous synthetic concept disclosures; no unsupported facts; local-only inquiry builder with clear no-send/no-storage state; narrow/medium/wide responsive behavior; accessibility review; media provenance/alt text; page-specific metadata and site discovery where applicable; real internal-link integrity; meaningful evidenced V0→V1 correction; reproducible local run/build. No public release without separate scoped authorization.
 - Exclusions: real business launch, real contact endpoints, CRM/backend/database/CMS, account/login, booking, payment, real form processing/data capture, uploads, paid assets/services, third-party contact, domain/hosting/DNS/deployment/public release, ongoing SEO/marketing, maintenance.
 - Simulated intake schedule and budget are not commitments or spending authority.
-- R1 authorized by the operator, but R1 entry is conditional on this approved PRD plus a validated, frozen shared Research & Experience Benchmark Pack. That pack is now frozen below; R1 may begin.
+- R1, R2 and R3 are complete. The operator separately approved NUSA-FORMA-R2-01 on 2026-11-23; the exact direction approval is recorded in §7. G2 is PASS and R4 is authorized under the unchanged PRD. Browser-rendered visual QA remains a required pre-acceptance activity.
 
 ## 4. Gate status
 | Gate | Status | Evidence |
 |---|---|---|
 | G0 | PASS | Exact Core SHA and canonical files; repository identity and permissions; initial empty website baseline; GitHub read/write path; corrected active Brief. |
-| G1 | PASS | Discovery captured; full NUSA-FORMA-PRD-0.1 presented; exact operator approval recorded above. |
-| G2 | IN_PROGRESS | Shared Research Pack frozen; single-agent R1 three-concept cycle may now proceed. R2, R3 self-assessment and operator direction approval remain pending. |
-| G3 | NOT_STARTED | Production build follows G2 and direction approval. |
-| G4 | NOT_STARTED | Internal QA/operator review pending. |
-| G5 | NOT_STARTED | Handover pending. |
+| G1 | PASS | Discovery captured; full NUSA-FORMA-PRD-0.1 presented; exact operator approval recorded in §3. |
+| G2 | PASS | Research Pack frozen; three R1 concepts completed; post-R1 north-star created; same-author R2 candidate frozen; non-independent R3 self-assessment recommends SELECT; exact operator direction approval recorded in §7. |
+| G3 | PASS | R4 production source built on isolated branch; nine approved routes and shared static implementation committed; V0→V1 correction completed; static source checks recorded in §8. |
+| G4 | IN_PROGRESS | Internal static checks complete; browser-rendered inspection remains NOT_VERIFIED because Chromium navigation is blocked by environment policy. Consolidated operator review is pending. |
+| G5 | NOT_STARTED | Handover pending G4 disposition. |
 | G6 | NOT_STARTED | Post-handover learning pending. |
 
 ## 5. Research & Experience Benchmark Pack — FROZEN 2026-11-23
@@ -104,28 +104,41 @@
 - Reuse policy: selectively adapt proven interaction/semantic patterns; rewrite and simplify code around the approved routes and candidate-specific design systems; retain dependency-light native HTML/CSS/JS where appropriate. Keep implementation modular, typed/validated where useful, with explicit interaction states, no stale UI state, reduced-motion and accessible fallbacks.
 
 ## 6. Stack, tools and implementation readiness
-- Preferred architecture hypothesis: static-first Astro with native HTML/CSS and minimal client-side JavaScript; reason: nine finite routes, shared layouts/components, pre-rendered output and no backend/data persistence. This is a Lead recommendation informed by official docs, not yet an implementation claim. Confirm exact project scaffolding/dependency availability before coding; do not add CMS or server adapter.
-- Runtime: Node v22.16.0 available. No browser/Playwright/Chromium tool exposed; browser visual QA cannot currently be claimed. Use local static/build/HTML/CSS/JS checks where possible and clearly label rendered-browser acceptance NOT_VERIFIED until a real browser is verified.
-- Image generation capability is available. Do not generate the post-R1 visual north-star before all three R1 concepts are complete and validated.
-- Assets: none approved yet. No spend or third-party contact.
-- Coding reference reviewed as above; it is not a visual/design reference.
+- **Selected production stack:** static multi-page HTML with shared CSS and minimal vanilla JavaScript; no framework, package manager, build dependency or server adapter. Rationale: nine finite public-information routes, no data persistence or backend, and a small set of shared interactions. This is the simplest suitable architecture for the approved Business Profile and keeps local preview reproducible.
+- **Runtime:** Node v22.16.0; Python 3 available. Local preview command from repository root: `python3 -m http.server 4173`; expected URL `http://localhost:4173/`; stop with Ctrl+C. HTTP server returned 200 for local curl smoke check. Operator shell/browser run remains to be confirmed.
+- **Browser capability test:** Chromium 144.0.7559.96 and Python Playwright are installed, but Playwright navigation to `http://127.0.0.1:4173/`, `http://localhost:4173/` and `file:///mnt/data/nusa-r4/index.html` was blocked with `net::ERR_BLOCKED_BY_ADMINISTRATOR`. No screenshot or rendered browser inspection is claimed. G4 visual QA remains NOT_VERIFIED.
+- **Production routes:** `/`, `/studio/`, `/services/`, `/projects/`, `/projects/rumah-teduh/`, `/projects/kedai-sela/`, `/process/`, `/faq/`, `/contact/`. A `404.html` fallback is included.
+- **Shared implementation:** root `styles.css` and `script.js`; no external packages, remote fonts, analytics, CDN or third-party runtime.
+- **Assets:** original authored SVG diagrams for Rumah Teduh and Kedai Sela plus SVG favicon. No third-party visual assets, paid media, external font or generated documentary imagery. The diagrams are synthetic concepts, not evidence of completed work.
+- **Source structure:** page-specific HTML under root and route folders; shared styles/scripts; README with local preview instructions. All nine route documents are Indonesian and carry page-specific titles/descriptions and `noindex,nofollow` while internal.
+- **R4 branch:** `ades/r4-production`, created from the isolated R1/R2 branch; `main` has not been modified.
+- **No integrations:** local inquiry builder uses in-memory page state only and clipboard API/fallback. No network request, storage, submission, WhatsApp, email or CRM integration.
+- **No hosting/domain/spend/deployment/public release authorized.**
 
 ## 7. Exploration and decision state
-- Common Research & Experience Benchmark Pack: FROZEN 2026-11-23 (Section 5).
-- R1 author: same identity as Lead/Execution Agent (GPT GO operator label; actual runtime GPT-6/OpenAI/GPT-6). Single-author cycle only.
-- R1: authorized and ready to start; exactly three materially distinct, browser-ready homepage concepts for the same approved PRD, each with a representative secondary-page preview, distinct site-wide system thesis, working navigation/interactions as scoped, and provenance. Concepts must be candidate-isolated.
-- Post-R1 visual north-star: NOT_CREATED. Create only after all three concepts are complete and Lead-validated; then hand to same author for R2.
-- R2: one final candidate by same author after north-star; not started.
-- R3: non-independent self-assessment only; no jury or fabricated independent verdict. Operator must approve material direction before R4.
-- R4/R5 production build/refinement: not started.
+- Common Research & Experience Benchmark Pack: FROZEN 2026-11-23 (§5).
+- R1 author: same identity as Lead/Execution Agent (operator-selected Lead label GPT GO; actual runtime GPT-6/OpenAI/GPT-6). One author only; no external roster or handoff.
+- R1: COMPLETE. Three materially distinct, isolated concepts and representative Studio-page previews are in branch `ades/r1-divergent-concepts`, folder `r1/`: Ruang Terukur; Ritme Huni; Atlas Ruang. The single author completed all three before north-star creation.
+- Post-R1 north-star: CREATED after R1 validation. Artifact was shared in conversation; generated visual is an illustrative target only, not a live site or documentary proof. Tool provider/model/version were not exposed. Provenance and limitation recorded in conversation.
+- R2: COMPLETE. Same author synthesized and froze one candidate at `r2/final-candidate/` in the exploration branch: **NUSA-FORMA-R2-01 — Ruang yang Memahami Cara Hidup**. Candidate includes homepage, Studio page, shared CSS and JS. It preserves spatial annotation, warm editorial hierarchy, forest/cream/terracotta/sage palette, service-scope clarity and local-only inquiry preparation.
+- R3: COMPLETE — non-independent self-assessment only. No jury/panel was assigned or fabricated. Governance recommendation: SELECT NUSA-FORMA-R2-01, with browser rendering limitation disclosed.
+- **Exact operator direction approval (2026-11-23):** “I approve NUSA-FORMA-R2-01 as the design direction for Nusa Forma Studio, including the warm editorial composition, forest/cream/terracotta/sage design system, spatially annotated concept visuals, service-scope separation, synthetic project disclosures, and local-only inquiry preparation. I authorize ADES to proceed to R4 production build under NUSA-FORMA-PRD-0.1, with browser-rendered visual QA still required before acceptance; no deployment or public release is authorized.”
+- R4: authorized and production build completed on isolated branch `ades/r4-production`; G3 PASS. R5 targeted refinement will follow G4 findings as needed.
+- No deployment, public release, spending, external contact, hosting, DNS or distribution authorized.
 
 ## 8. Build, QA, handover and release
-- Production stack not yet implemented. No production source/routes/assets or working website exist.
-- V0→V1 loop: NOT_STARTED.
-- Browser QA, route screenshot matrix and responsive rendered inspection: NOT_VERIFIED until browser capability is verified.
-- No real integrations/endpoints. Inquiry tool remains local-only, no transmission/storage.
-- Runbook/handover: NOT_STARTED.
-- Hosting/domain/spend/deployment/public release: NOT_AUTHORIZED.
+- **V0 complete:** full nine-route static site and shared assets/code committed by `d52234f2d2d2e9251bd326d6c10634f41ac99516`.
+- **V0→V1 meaningful correction complete:** V0 review found synthetic numeric budget choices could be mistaken for official prices; Studio navigation omitted FAQ; muted text colour token was below 4.5:1 on the main surface. V1 removed numeric price bands from homepage and contact inquiry selectors, completed the Studio FAQ navigation, and darkened muted/accent tokens. These changes protect business truth, route discoverability and readability.
+- **V1 branch/head before this Brief update:** `ades/r4-production` / `7cb35ce04dee9667228f27b7631f826365c697e5`. V1 changes include commits `8c05b4042e6c8b7841a5229d32ed701c6fff42fb`, `791b36cd324e3f220f78ddd024fd11c3d3dc1786`, `0a81b2a12065a22a8ab0c70ad70515a55d3cdd05`, `759e2b32213438e6a7f107c0031e96cee71e22d8`, `25ab9f6a33495c62dde1de679709895bde9d2492` and `7cb35ce04dee9667228f27b7631f826365c697e5`.
+- **Route/source checks:** all nine route files were re-fetched from the R4 branch. Each has Indonesian document language, one H1, unique IDs, no image missing alt text, one shared nav and no unmapped root links. CSS brace count is balanced. All nine page titles are present and distinct. Root and contact inquiry elements match the shared script contract.
+- **JavaScript:** exact shared `script.js` fetched from the R4 branch and copied to the local verification workspace; `node --check` PASS on Node v22.16.0. Script invalidates stale inquiry summaries on edits, writes summary with `textContent`, offers clipboard fallback, and contains no fetch/XHR/sendBeacon/localStorage/sessionStorage use.
+- **CSS/accessibility-oriented source check:** CSS brace balance 0. Computed contrast ratios from selected tokens: body text 12.26:1, muted text 5.81:1, clay accent 5.10:1, button text 11.21:1 against their stated surfaces. This is a limited token calculation, not a full-page WCAG audit or conformance claim.
+- **Browser QA:** Playwright attempted Chromium navigation at wide/medium/small route viewports and local/file URL paths. Chromium returned `ERR_BLOCKED_BY_ADMINISTRATOR` for localhost and file navigation. No screenshot, rendered layout, runtime-console, image crop/loading or responsive interaction pass is claimed. Mark all rendered browser/viewport checks NOT_VERIFIED until a permitted browser path or operator-provided render evidence is available.
+- **Interaction source audit:** shared JS implements mobile menu open/close, Escape-to-close, outside-click close, scroll progress, reduced-motion-aware reveal, local inquiry validation/summary generation, stale-summary invalidation and clipboard fallback. FAQ uses native `details/summary`. Actual keyboard/touch/browser behavior remains NOT_VERIFIED.
+- **Assets and rights:** original SVG floor-plan concept diagrams and favicon; no third-party or paid assets. All portfolio concepts are conspicuously disclosed as synthetic and not built/client work.
+- **Preview/runbook:** from repository root, run `python3 -m http.server 4173`, open `http://localhost:4173/`, stop with Ctrl+C. This command is documented in README; HTTP smoke check returned 200 in the local container. Browser preview itself remains blocked in this environment.
+- **G4:** IN_PROGRESS. Internal source review completed; rendered browser visual QA remains NOT_VERIFIED. One consolidated operator review is still required after a permitted preview/render path is available.
+- **Handover/release:** NOT_STARTED. No real integrations/endpoints. Inquiry tool is local-only, with no transmission/storage. Hosting/domain/spend/deployment/public release remain NOT_AUTHORIZED.
 
 ## 9. G6 learning
 - NOT_STARTED. Revisit the operator's coding reference and the resulting implementation/QA evidence after handover; record what patterns were useful, what required correction and any capability gaps.
