@@ -60,7 +60,7 @@
 |---|---|---|
 | G0 | PASS | Exact Core SHA and canonical files; repository identity and permissions; initial empty website baseline; GitHub read/write path; corrected active Brief. |
 | G1 | PASS | Discovery captured; full NUSA-FORMA-PRD-0.1 presented; exact operator approval recorded above. |
-| G2 | IN_PROGRESS | Shared Research Pack frozen; single-agent R1 three-concept cycle may now proceed. R2, R3 self-assessment and operator direction approval remain pending. |
+| G2 | IN_PROGRESS | Research Pack frozen; R1 complete and structurally validated; R2 synthesis in progress; R3 self-assessment and operator direction approval pending. Browser visual QA limitation recorded. |
 | G3 | NOT_STARTED | Production build follows G2 and direction approval. |
 | G4 | NOT_STARTED | Internal QA/operator review pending. |
 | G5 | NOT_STARTED | Handover pending. |
@@ -113,9 +113,10 @@
 ## 7. Exploration and decision state
 - Common Research & Experience Benchmark Pack: FROZEN 2026-11-23 (Section 5).
 - R1 author: same identity as Lead/Execution Agent (GPT GO operator label; actual runtime GPT-6/OpenAI/GPT-6). Single-author cycle only.
-- R1: authorized and ready to start; exactly three materially distinct, browser-ready homepage concepts for the same approved PRD, each with a representative secondary-page preview, distinct site-wide system thesis, working navigation/interactions as scoped, and provenance. Concepts must be candidate-isolated.
-- Post-R1 visual north-star: NOT_CREATED. Create only after all three concepts are complete and Lead-validated; then hand to same author for R2.
-- R2: one final candidate by same author after north-star; not started.
+- R1: COMPLETE — three materially distinct, self-contained homepage concepts with representative Studio-page previews were created and frozen on branch `ades/r1-divergent-concepts` at head `398761b104effe9c883831f6ef8cd14290b55b3e`. Concept 01 `r1/concept-01/index.html` — Ruang Terukur (architectural field-notes / measured grid / spatial diagrams); Concept 02 `r1/concept-02/index.html` — Ritme Huni (organic editorial / lived-in routines / tactile warmth); Concept 03 `r1/concept-03/index.html` — Atlas Ruang (high-contrast spatial index / typographic archive / category filtering). Each has original inline SVG media, route-independent preview of a Studio secondary page, labelled synthetic project examples, responsive CSS, keyboard-aware menu, reduced-motion support and local-only inquiry preparation with copy support and stale-summary invalidation.
+- R1 validation: all three files re-fetched from the isolated branch. Static checks PASS: JavaScript syntax parses; IDs are unique; internal hash targets resolve; CSS braces balance; no external image-file dependencies; skip link, Escape/outside-click menu close, reduced-motion rules, copy fallback and local-only disclosure are present. Browser rendering and live visual quality are NOT_VERIFIED: `/usr/bin/chromium` exists, but repository content could not be loaded into the local runtime (outbound DNS unavailable) and no connected browser automation is exposed. No screenshot, viewport or live interaction pass is claimed.
+- Post-R1 visual north-star: CREATED 2026-11-23 using the available image-generation tool. Local artifact `/mnt/data/a_high_quality_editorial_website_homepage_mockup_f.png`, PNG 1536×1024, SHA-256 `b82cf08f9e99579bf4578ad06d4de38276a632ac4e86446ed019f64fe10d3c86`. Tool/provider/model version not exposed. Inputs: approved NUSA-FORMA-PRD-0.1, frozen Section 5 Research Pack and the three validated R1 source concepts. Direction rationale: retain Concept 01's legible spatial annotations and information hierarchy; Concept 02's warm, human-scale interior narrative; Concept 03's disciplined index/navigation structure. The image is a synthetic visual target, not a browser screenshot, final design or built project. It is an optional R2 aid, not an amendment to PRD/research.
+- R2: IN_PROGRESS — same author as R1 (Lead/Execution Agent) now audits its three concepts and the north-star, then synthesizes exactly one browser-ready final candidate; it may adapt/reject the north-star where stronger UX results. No other author or jury is introduced.
 - R3: non-independent self-assessment only; no jury or fabricated independent verdict. Operator must approve material direction before R4.
 - R4/R5 production build/refinement: not started.
 
