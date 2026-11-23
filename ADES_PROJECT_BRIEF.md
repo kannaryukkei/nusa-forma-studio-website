@@ -63,7 +63,7 @@
 | G2 | PASS | Research Pack frozen; three R1 concepts completed; post-R1 north-star created; same-author R2 candidate frozen; non-independent R3 self-assessment recommends SELECT; exact operator direction approval recorded in §7. |
 | G3 | PASS | R4 production source built on isolated branch; nine approved routes and shared static implementation committed; V0→V1 correction completed; static source checks recorded in §8. |
 | G4 | IN_PROGRESS | Internal static checks complete; browser-rendered inspection remains NOT_VERIFIED because Chromium navigation is blocked by environment policy. Consolidated operator review is pending. |
-| G5 | NOT_STARTED | Handover pending G4 disposition. |
+| G5 | IN_PROGRESS | Repository-specific Windows PowerShell clean-checkout runbook executed successfully per operator report on 2026-11-23; handover facts and limitations recorded below. G4 disposition remains open. |
 | G6 | NOT_STARTED | Post-handover learning pending. |
 
 ## 5. Research & Experience Benchmark Pack — FROZEN 2026-11-23
@@ -525,4 +525,4 @@
 - Assets: self-hosted local WebP images, favicon, EB Garamond and Inter WOFF2 fonts; font OFL license files included in repository. Project media is synthetic/conceptual and must not be represented as completed client work. No external runtime image/font CDN is required by inspected HTML.
 - Risks/limitations: direct HTTP navigation and clean-checkout runbook remain unverified in the Lead browser environment due prior `ERR_BLOCKED_BY_ADMINISTRATOR`; cross-browser/OS, physical-device, screen-reader, full keyboard coverage and full WCAG 2.2 AA/axe audit remain NOT_VERIFIED. Contact interaction is local-only and does not send/store data. Pages carry `noindex,nofollow`; this is an internal concept, not a public launch.
 - Release: NOT_AUTHORIZED. No PR, merge to `main`, hosting, deployment, DNS/domain change, public release/distribution, paid service, spending or external outreach authorized.
-- G5 status: IN_PROGRESS. Remaining handover verification: operator executes the clean-checkout PowerShell runbook above and reports the observed result/any error; Lead records exact result and corrects instructions if needed. G4 remains IN_PROGRESS until its explicit disposition and required NOT_VERIFIED exceptions are resolved or specifically waived.
+- G5 status: IN_PROGRESS. Clean-checkout PowerShell runbook execution is complete per operator report (success, 2026-11-23). Lead records this as operator-reported evidence; no further runbook action is pending unless an error is later reported. G4 remains IN_PROGRESS until its explicit disposition and required NOT_VERIFIED exceptions are resolved or specifically waived.
