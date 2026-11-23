@@ -507,3 +507,22 @@
 - Screenshots retained in the current Lead workspace: `/mnt/data/r5516-g4-studio-rest.png` and `/mnt/data/r5516-g4-studio-hover.png` (1440px Studio page; rest and hover review).
 - Remaining G4 limitations: direct HTTP navigation, relative-path server behavior and clean-checkout runbook have not been verified in this environment; prior direct local HTTP navigation was blocked by `ERR_BLOCKED_BY_ADMINISTRATOR`. Cross-browser/OS and physical-device testing, full keyboard walkthrough of every visible affordance, screen-reader testing, axe/full WCAG 2.2 AA review, and operator visual/direction acceptance remain NOT_VERIFIED or pending. The harness does not establish commercial conversion effectiveness, factual truth beyond the approved synthetic brief, or deployment correctness.
 - G4 remains IN_PROGRESS. Internal virtual-document rendered QA above is evidence for the exact reviewed package only. Await operator review of the near-final rendered experience and explicit G4 disposition; do not mark visual acceptance from internal checks alone. No deployment, hosting, DNS, public release, spending or third-party contact authorized.
+
+
+## G5 — Handover preparation (2026-11-23)
+- Operator has confirmed that the R5.5.16 visual iteration is complete and no further visual corrections are requested. This records closure of visual iteration; it does not silently waive unresolved G4 technical controls or assert G4 PASS.
+- Repository handover facts independently checked on `ades/r5-visual-interaction`: static HTML/CSS/JavaScript site; root `README.md` documents Python 3 and `python3 -m http.server 4173`; `package.json` is absent (GitHub contents API returned 404); root `index.html`, `studio/index.html`, `404.html`, `styles.css`, `script.js` and assets are present. No package install, build, database, environment file, backend process or secrets are required by the inspected implementation.
+- Local runbook draft (Windows PowerShell, clean checkout):
+  ```powershell
+  git clone --branch ades/r5-visual-interaction --single-branch https://github.com/kannaryukkei/nusa-forma-studio-website.git
+  Set-Location .\nusa-forma-studio-website
+  py --version
+  py -m http.server 4173
+  ```
+  Open `http://localhost:4173/` in a browser. Stop the server with `Ctrl+C`. Run from the repository root. Python 3 is the only runtime requirement; no dependency installation or build step. The command is adapted from the committed README for Windows PowerShell. The existing operator workstation has previously used `py -m http.server 8000` from the working checkout, but the exact clean-clone sequence above has NOT_YET_BEEN_EXECUTED as a clean checkout.
+- Ownership/access: source and canonical Brief are in GitHub repository `kannaryukkei/nusa-forma-studio-website`; working branch `ades/r5-visual-interaction`. Operator owns GitHub account/repository authority and workstation; Lead has verified GitHub connector read/write capability. No additional hosting, domain, deployment, DNS or third-party access is established.
+- Costs: no runtime/package/vendor costs for local preview; Python 3 and Git are assumed already available. Hosting/domain/maintenance costs are unknown and out of scope; no spending authorized.
+- Assets: self-hosted local WebP images, favicon, EB Garamond and Inter WOFF2 fonts; font OFL license files included in repository. Project media is synthetic/conceptual and must not be represented as completed client work. No external runtime image/font CDN is required by inspected HTML.
+- Risks/limitations: direct HTTP navigation and clean-checkout runbook remain unverified in the Lead browser environment due prior `ERR_BLOCKED_BY_ADMINISTRATOR`; cross-browser/OS, physical-device, screen-reader, full keyboard coverage and full WCAG 2.2 AA/axe audit remain NOT_VERIFIED. Contact interaction is local-only and does not send/store data. Pages carry `noindex,nofollow`; this is an internal concept, not a public launch.
+- Release: NOT_AUTHORIZED. No PR, merge to `main`, hosting, deployment, DNS/domain change, public release/distribution, paid service, spending or external outreach authorized.
+- G5 status: IN_PROGRESS. Remaining handover verification: operator executes the clean-checkout PowerShell runbook above and reports the observed result/any error; Lead records exact result and corrects instructions if needed. G4 remains IN_PROGRESS until its explicit disposition and required NOT_VERIFIED exceptions are resolved or specifically waived.
