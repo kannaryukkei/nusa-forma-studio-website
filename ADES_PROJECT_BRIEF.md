@@ -244,3 +244,9 @@
 - Visual captures: updated session screenshots generated for Home, Studio, Services, Archive, both project details, Process, FAQ and Contact at 1440px and 390px; Contact and FAQ interaction states checked separately. Captures use actual HTML/CSS/JS and local media/fonts in virtual documents. They do not prove real local HTTP route navigation.
 - Limitations: direct Chromium navigation to localhost remains blocked by ERR_BLOCKED_BY_ADMINISTRATOR; cross-route click/back-forward and clean HTTP server browser session remain NOT_VERIFIED. 768px tablet composition was tested in the 27-case set but no physical tablet/touch-device test. Screen-reader operation, full axe/WCAG 2.2 AA audit, cross-browser/OS custom listbox rendering, real-device font rasterization and actual deployment runtime remain NOT_VERIFIED. Existing synthetic image set is unchanged; repeated asset use is diversified by role/crop but not eliminated. No measured conversion/performance claims.
 - Gate: G4 remains IN_PROGRESS; R5.5 is a candidate, not operator-accepted. No hosting, DNS, deployment, public release, spending or third-party contact authorized.
+
+
+### R5.5 final verification correction
+- Final QA was repeated after self-hosted font integration and the last readability adjustment: 27 route/viewport cases, zero overflow, zero page errors, 697 CSS rules with zero top-level parse errors, custom menu/dropdown behavior unchanged, and local font checks true for EB Garamond and Inter.
+- Final FAQ close sample: at 60ms the panel measured 132.5px and opacity ~0.72; after 300ms it was closed at 0px. The earlier ~142px intermediate sample is superseded.
+- Final review ZIP remains 753,608 bytes with 35 archive entries and verified integrity; its extracted root directory is nusa-r55-preview.
