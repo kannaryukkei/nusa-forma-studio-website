@@ -11,7 +11,7 @@
 - Operator-selected Lead label: GPT GO (verbatim operator label). Actual runtime identity: GPT-6, provider OpenAI, version GPT-6. These are separate identity layers.
 - Execution Agent: SAME AS LEAD. Governance Lead: SAME AS LEAD. Evaluators/Synthesizer: NONE. Design-author roster: NONE. One identity owns Lead, R1/R2 author, execution and governance; R3 is explicitly non-independent self-assessment, not a jury.
 - Harness: ChatGPT conversation + GitHub connector. GitHub read/write verified on Core and website repository. No separate coding agent or external handoff. Image-generation capability is available in this conversation; exact provider/model/version is not exposed. Local container runtime and Node v22.16.0 are available; Chromium 144.0.7559.96 and Python Playwright are installed. Actual navigation to both localhost and file URLs was blocked by Chromium with `ERR_BLOCKED_BY_ADMINISTRATOR`; browser-rendered QA remains NOT_VERIFIED.
-- Active production branch: `ades/r4-production`; pre-Brief-update HEAD: `c5b5335d407e9eadff8e2b6decb75c8af6c18435`. Branch was created from the isolated R1/R2 exploration branch; `main` remains unchanged. Record and verify the new Brief commit after this update.
+- Active working branch: `ades/r5-visual-interaction`; latest verified website source integration commit: `9c338d3fc28456cb9183d7c2d1e41791177d28b5`. Canonical Brief updates are committed on this same branch; `main` remains unchanged. No PR or merge is authorized.
 - Release: NOT_AUTHORIZED. No spending, third-party contact, DNS, hosting, deployment or public release authorized.
 - Last verified state: 2026-11-23 Asia/Jakarta.
 
@@ -62,9 +62,9 @@
 | G1 | PASS | Discovery captured; full NUSA-FORMA-PRD-0.1 presented; exact operator approval recorded in §3. |
 | G2 | PASS | Research Pack frozen; three R1 concepts completed; post-R1 north-star created; same-author R2 candidate frozen; non-independent R3 self-assessment recommends SELECT; exact operator direction approval recorded in §7. |
 | G3 | PASS | R4 production source built on isolated branch; nine approved routes and shared static implementation committed; V0→V1 correction completed; static source checks recorded in §8. |
-| G4 | IN_PROGRESS | Internal static checks complete; browser-rendered inspection remains NOT_VERIFIED because Chromium navigation is blocked by environment policy. Consolidated operator review is pending. |
-| G5 | IN_PROGRESS | Repository-specific Windows PowerShell clean-checkout runbook executed successfully per operator report on 2026-11-23; handover facts and limitations recorded below. G4 disposition remains open. |
-| G6 | NOT_STARTED | Post-handover learning pending. |
+| G4 | PASS (with explicit waivers) | R5.5.16 visual candidate accepted by operator; internal rendered QA recorded in §8; four remaining technical controls explicitly WAIVED by operator with limitations retained, recorded in §8. |
+| G5 | PASS | Repository-specific Windows PowerShell clean-checkout runbook reported successful by operator; handover facts, ownership, costs, limitations and release boundaries recorded below. |
+| G6 | IN_PROGRESS | G5 is complete. Awaiting the operator's unfiltered first assessment; no G6 conclusion or PASS recorded. |
 
 ## 5. Research & Experience Benchmark Pack — FROZEN 2026-11-23
 **Status: FROZEN for R1.** Shared baseline for the one selected author (same identity as Lead). Research includes three directly inspected niche studio websites, one adjacent studio-platform case study and five authoritative implementation/accessibility references. Search snippets are discovery evidence only; live interactive/browser states were not tested because no browser automation/rendering tool is exposed. No source visual, code, copy or asset is licensed for reuse by inspection.
@@ -506,7 +506,7 @@
 - Interaction smoke tests: mobile navigation opens and Escape closes/restores the collapsed state; Projects commercial filter reduces visible cards from 2 to 1 and sets aria-pressed=true; first FAQ disclosure opens; Contact local inquiry builder generates the expected local summary from test-only synthetic values. No network requests were observed during the Contact interaction harness. These are narrow assertions, not exhaustive keyboard/interaction coverage.
 - Screenshots retained in the current Lead workspace: `/mnt/data/r5516-g4-studio-rest.png` and `/mnt/data/r5516-g4-studio-hover.png` (1440px Studio page; rest and hover review).
 - Remaining G4 limitations: direct HTTP navigation, relative-path server behavior and clean-checkout runbook have not been verified in this environment; prior direct local HTTP navigation was blocked by `ERR_BLOCKED_BY_ADMINISTRATOR`. Cross-browser/OS and physical-device testing, full keyboard walkthrough of every visible affordance, screen-reader testing, axe/full WCAG 2.2 AA review, and operator visual/direction acceptance remain NOT_VERIFIED or pending. The harness does not establish commercial conversion effectiveness, factual truth beyond the approved synthetic brief, or deployment correctness.
-- G4 remains IN_PROGRESS. Internal virtual-document rendered QA above is evidence for the exact reviewed package only. Await operator review of the near-final rendered experience and explicit G4 disposition; do not mark visual acceptance from internal checks alone. No deployment, hosting, DNS, public release, spending or third-party contact authorized.
+- G4 disposition: operator explicitly accepted R5.5.16 and waived the specifically named residual controls below. Internal virtual-document rendered QA above remains evidence only for the exact reviewed package; the waivers do not convert untested controls into PASS. No deployment, hosting, DNS, public release, spending or third-party contact authorized.
 
 
 ## G5 — Handover preparation (2026-11-23)
@@ -525,4 +525,25 @@
 - Assets: self-hosted local WebP images, favicon, EB Garamond and Inter WOFF2 fonts; font OFL license files included in repository. Project media is synthetic/conceptual and must not be represented as completed client work. No external runtime image/font CDN is required by inspected HTML.
 - Risks/limitations: direct HTTP navigation and clean-checkout runbook remain unverified in the Lead browser environment due prior `ERR_BLOCKED_BY_ADMINISTRATOR`; cross-browser/OS, physical-device, screen-reader, full keyboard coverage and full WCAG 2.2 AA/axe audit remain NOT_VERIFIED. Contact interaction is local-only and does not send/store data. Pages carry `noindex,nofollow`; this is an internal concept, not a public launch.
 - Release: NOT_AUTHORIZED. No PR, merge to `main`, hosting, deployment, DNS/domain change, public release/distribution, paid service, spending or external outreach authorized.
-- G5 status: IN_PROGRESS. Clean-checkout PowerShell runbook execution is complete per operator report (success, 2026-11-23). Lead records this as operator-reported evidence; no further runbook action is pending unless an error is later reported. G4 remains IN_PROGRESS until its explicit disposition and required NOT_VERIFIED exceptions are resolved or specifically waived.
+- G5 status: PASS. Clean-checkout PowerShell runbook execution is complete per operator report (success, 2026-11-23). Lead records this as operator-reported evidence; no further runbook action is pending unless an error is later reported.
+
+
+## G4 operator acceptance and explicit exceptions (2026-11-23)
+- Operator approval, response to the Lead's explicit request to accept the candidate and waive the remaining named controls: **“ya gw setuju”**. This is recorded as approval of the R5.5.16 candidate for G4 and acceptance of the explicit exceptions listed below; no broader release, deployment, merge, spending or third-party authority is implied.
+- Accepted candidate: R5.5.16 source integrated in website commit `9c338d3fc28456cb9183d7c2d1e41791177d28b5`, branch `ades/r5-visual-interaction`. Operator had already declared visual iteration complete and no further visual corrections requested. This acceptance closes the visual-review item for this candidate.
+- Internal QA evidence remains as recorded in the preceding G4 section: Chromium 144 virtual-document rendering, nine routes × three viewports (27 cases), zero horizontal overflow, one H1 per route, zero JS errors, image/alt checks, CSS parse, font checks, selected interaction smoke tests and reduced-motion checks. This is not live HTTP/deployment verification or exhaustive accessibility certification.
+- **Explicitly WAIVED by operator for this G4 acceptance; remain NOT_VERIFIED (not PASS):**
+  1. Cross-browser and cross-operating-system testing.
+  2. Physical-device testing.
+  3. Full keyboard walkthrough of every visible affordance.
+  4. Screen-reader testing.
+  5. Full axe audit and full WCAG 2.2 AA conformance review.
+- Residual impact: defects specific to untested browser/OS combinations or physical devices may remain; keyboard/focus sequence defects outside the narrow smoke tests may remain; screen-reader naming, announcement and navigation issues may remain; WCAG 2.2 AA conformance is not established. The project must not claim accessibility conformance or cross-browser/device verification. These waivers are limited to this internal G4 acceptance and do not authorize public release.
+- Other documented environment limits remain: direct local HTTP navigation was blocked by `ERR_BLOCKED_BY_ADMINISTRATOR`; virtual-document tests do not establish live route navigation, production hosting/runtime, or deployment correctness.
+- G4: **PASS WITH EXPLICIT WAIVERS**. The waiver records are not converted into PASS controls.
+- G5: **PASS** based on the operator-reported successful clean-checkout PowerShell runbook, with provenance kept explicit. No public release or deployment is authorized.
+
+## G6 — operator assessment requested (2026-11-23)
+- G6 has begun after G5. In accordance with ADES 2.7, the operator's unfiltered assessment is requested first; Lead assessment and any conclusion are intentionally not pre-filled.
+- Operator: please describe what it was like working through this cycle—where you had to remind or correct the Lead, what caused friction or repeated work, what autonomy was useful or unhelpful, whether decisions were sound, and whether the delivered website achieved the outcome you wanted. You can be blunt and concise; no form is required.
+- G6 status: IN_PROGRESS. No joint outcome, reusable change, coding-example disposition or PASS has been recorded yet.
