@@ -379,3 +379,19 @@
 - Review ZIP built from the final local source: 981,997 bytes, 29 entries, root `nusa-r557-preview`; `ZipFile.testzip()` returned no integrity errors. This is the final package byte count.
 - Final static verification after packaging: CSS parser 1170 top-level rules, zero parse errors; `node --check script.js` PASS.
 - Canonical Brief commit: 502f50e7cbad40c17197411415e627e6c282af11; branch `ades/r5-visual-interaction`. Website source remains in the local review package and is not committed to the website repository.
+
+
+### R5.5.8 — archive route-entry imagery and cinematic hover lift (2026-11-23)
+- Operator reported Project archive images appeared only after scrolling following navigation, and requested a restrained lift/micro-interaction with local hover emphasis in Studio and Home.
+- Archive route entry: both concept images now use eager loading; the first retains high fetch priority and the second uses low priority. Archive cards no longer depend on the scroll-triggered reveal observer. A decode-ready initializer fades each image in after browser decode, independently of scrolling. Card visibility and layout are stable at first render.
+- Studio Design Principles and Home How It Takes Shape: the shared grid photo remains continuous and stationary beneath each grid. Grid-level photo opacity is stable; each tile owns its own warm translucent veil. On hover/focus, only the pointed tile's veil thins, its surface lifts 7px, and a restrained shadow appears; neighbouring tiles keep their resting veil and forest text. The active tile transitions to ivory/peach text. No per-card image swaps or grid-wide opacity changes.
+- Touch layouts retain a static softer veil; reduced-motion disables the new lift/transitions. Existing assets, content, navigation, filter semantics and local-only inquiry behaviour remain unchanged. No new claims, integrations, routes, dependencies, persistence, external contact or release permissions.
+
+### R5.5.8 targeted verification
+- Chromium 144 virtual-document regression for Archive, Studio and Home at 1440, 768 and 390 CSS px: 9/9 cases, zero horizontal overflow, exactly one H1 per route, zero JavaScript page errors.
+- Archive: both images report complete with naturalWidth 764, `is-ready` set, opacity 1 and `loading=eager` before any scroll; both cards render visible with opacity 1. Commercial filter leaves Commercial visible, Residential hidden, `aria-pressed=true`; zero JS errors.
+- Studio: only hovered tile changes to a thinner forest veil, lifts 7px, and reaches warm ivory text; three adjacent tiles retain resting veil and forest text.
+- Home: same local-cell behavior; only hovered step lifts 7px and changes veil/text; three adjacent tiles remain at rest.
+- Reduced-motion check: tile transform none and transition duration 0s.
+- Static checks: `node --check script.js` PASS; CSS parser 1188 top-level rules, zero parse errors. Review ZIP `nusa-forma-studio-r5.5.8-review.zip`, 983,765 bytes, 29 entries, ZIP integrity PASS; root `nusa-r558-preview`.
+- Limitation: browser harness blocks local HTTP navigation (`ERR_BLOCKED_BY_ADMINISTRATOR`), so route-entry verification used rendered virtual documents with actual local HTML/CSS/JS/assets and confirmed both eager images decoded without scrolling. This is not proof of cross-document navigation in a deployed runtime. Cross-browser/OS, physical devices, screen-reader operation and full axe/WCAG 2.2 AA remain NOT_VERIFIED. R5.5.8 is a review candidate, not operator acceptance. G4 remains IN_PROGRESS; no deployment, hosting, DNS, public release, spending or third-party contact authorized.
