@@ -485,3 +485,13 @@
 - The comparison response also reports the route files and assets in the branch's cumulative diff against `main`; it includes historical project files and Brief/README changes from earlier branch history, not only the R5.5.16 integration commit. The latest integration commit itself was created from the previously verified branch head `5f6fa50100506252090a99c2ebb64a363b374c2e`.
 - Governance remains: visual iteration operator-declared complete; G4 IN_PROGRESS. Source integration is complete, but remaining QA/evidence and explicit G4 disposition are pending. No PR opened, no merge, no deployment, hosting, DNS, public release, spending or third-party contact authorized.
 - Next safe task: inspect the three commits on `main` not contained in the work branch and determine whether they are expected project history or require a controlled branch update; then complete G4 evidence and request operator acceptance. Keep this Brief as the single active project-state record.
+
+
+## Branch ancestry review — three main-only gate-history commits (2026-11-23)
+- Compared `main` with `ades/r5-visual-interaction`: the work branch is 68 commits ahead / 3 behind; merge base is `e1dd7cddab2de12f5fd8f746bd4deec73933e323`. After the merge base, `main` contains exactly three commits absent from the work branch:
+  1. `21d354850a98f2df335676b0acfe475196b13589` — “Record R1 concepts and post-R1 north-star”.
+  2. `ff6e6819bf48231c8301a4f7c81d5e2bb1037079` — “Freeze R2 final design candidate”.
+  3. `4cb1a950cc53dd2ee9f1beb60e4cf7bcb287458d` — “Record single-agent R3 self-assessment and direction approval gate”.
+- Each of these commits changes only `ADES_PROJECT_BRIEF.md`, recording successive historical G2/R1/R2/R3 states. The active work branch already contains the consolidated R1 concepts under `r1/`, the frozen R2 candidate under `r2/final-candidate/`, the operator-approved direction, complete gate status, and later R4/R5 evidence in its own canonical Brief.
+- These are historical intermediate Brief revisions, not missing production source or new operator decisions. Do not cherry-pick/merge them into the production branch: doing so would replay stale intermediate Brief content and create avoidable conflicts. Preserve the separate histories and compare against the common merge base; do not merge the work branch to `main` until G4/G5 and explicit release/merge authority are resolved.
+- Recomparison from common merge base `e1dd7cddab2de12f5fd8f746bd4deec73933e323` to `ades/r5-visual-interaction` now reports 69 commits ahead, 0 behind (status `ahead`). The work branch includes the source integration and canonical Brief update. This does not constitute merge approval.
